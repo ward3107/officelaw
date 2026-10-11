@@ -1,4 +1,5 @@
 "use client";
+import VasiaSignature from './VasiaSignature';
 
 // =============================================================================
 // FOOTER COMPONENT
@@ -168,6 +169,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <VasiaSignature />
     </footer>
   );
 }
