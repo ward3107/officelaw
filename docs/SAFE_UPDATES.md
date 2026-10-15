@@ -6,6 +6,8 @@ This pull request prepares checks; it does not activate repository settings.
 Protect `main` with a ruleset that requires pull requests, an up-to-date branch, and the following successful checks:
 
 - `Quality checks`
+- `test`
+- `audit`
 
 Apply the rule to administrators and bots; do not give update bots a bypass. Keep automatic merging disabled during rollout. Check names must match GitHub's displayed names after their first run. A skipped, missing, cancelled, or pending check is not evidence of a passing test.
 
@@ -24,3 +26,5 @@ Postdeployment monitoring and automatic rollback are not installed by this PR: t
 ## Repository-specific notes
 
 Existing browser and security workflows remain separate. They must also pass before merging. Vulnerability findings and missing Snyk configuration are not resolved by switching Node versions.
+
+The new Quality checks run passed on this PR, but the existing Playwright and security workflows did not produce PR checks. Their latest visible runs are old scheduled failures. Re-enable/inspect those workflows in Actions and obtain fresh successful test and audit checks before merging; the absence of a run is not a pass.
