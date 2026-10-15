@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Run npm audit
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=high --json > npm-audit.json
         # Fails CI on high/critical vulnerabilities
 
       - name: Upload audit report on failure
@@ -38,5 +38,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: audit-report-${{ github.run_number }}
-          path: package-lock.json
+          path: npm-audit.json
           retention-days: 30

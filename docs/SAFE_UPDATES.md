@@ -27,4 +27,4 @@ Postdeployment monitoring and automatic rollback are not installed by this PR: t
 
 Existing browser and security workflows remain separate. They must also pass before merging. Vulnerability findings and missing Snyk configuration are not resolved by switching Node versions.
 
-The new Quality checks run passed on this PR, but the existing Playwright and security workflows did not produce PR checks. Their latest visible runs are old scheduled failures. Re-enable/inspect those workflows in Actions and obtain fresh successful test and audit checks before merging; the absence of a run is not a pass.
+The Snyk workflow now runs the lockfile-installed CLI with SARIF output, instead of attempting to upload a file that monitor never created. Missing scan output remains a failure. Configure the existing SNYK_TOKEN (including the correct Dependabot secret scope when scanning bot PRs) and organization access before treating that scan as operational. The npm audit failure artifact now contains the actual audit JSON.

@@ -31,28 +31,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        continue-on-error: true # Set to false to fail on vulns
+      - name: Run the locked Snyk CLI and create SARIF
+        continue-on-error: true # Vulnerability findings remain advisory in this integration.
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_ORG: ${{ vars.SNYK_ORG }}
           NODE_OPTIONS: "--max-old-space-size=4096"
-        with:
-          args: --severity-threshold=high
-          command: monitor
-          org: ${{ vars.SNYK_ORG }} # Optional: set your org name
+        run: |
+          args=(test --severity-threshold=high --sarif-file-output=snyk.sarif)
+          if [ -n "$SNYK_ORG" ]; then args+=(--org="$SNYK_ORG"); fi
+          npx --no-install snyk "${args[@]}"
 
-      - name: Upload Snyk SARIF file for GitHub Advanced Security
-        uses: github/codeql-action/upload-sarif@v3
+      - name: Require a scan report
         if: always()
+        run: |
+          if [ ! -s snyk.sarif ]; then
+            echo "::error::Snyk did not produce a report. Check installation, SNYK_TOKEN and organization access; this is not a completed scan."
+            exit 1
+          fi
+
+      - name: Upload Snyk SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        if: always() && hashFiles('snyk.sarif') != ''
         with:
           sarif_file: snyk.sarif
-
-      - name: Snyk test output
-        uses: snyk/actions/node@master
-        if: failure()
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=high --json
-          command: test
