@@ -626,7 +626,7 @@ export function PrivacyPolicyContent() {
           <div className="lg:hidden mb-6">
             <button
               onClick={() => setIsTocOpen(!isTocOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-white rounded-xl shadow-sm border border-slate-200"
+              className="w-full flex items-center justify-between px-4 py-3 bg-white rounded-xl shadow-xs border border-slate-200"
             >
               <span className="font-medium text-slate-900">{t.toc}</span>
               <svg
@@ -660,7 +660,7 @@ export function PrivacyPolicyContent() {
 
           {/* Content */}
           <main className="flex-1 min-w-0">
-            <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 lg:p-12">
+            <div className="bg-white rounded-2xl shadow-xs p-6 md:p-8 lg:p-12">
               <div
                 className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600 prose-a:text-blue-600"
                 style={{ direction: isRTL ? "rtl" : "ltr", fontFamily: 'var(--font-rubik), "Rubik", system-ui, sans-serif', color: '#334155' }}

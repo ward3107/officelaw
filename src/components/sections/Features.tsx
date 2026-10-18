@@ -62,7 +62,7 @@ export function Features() {
           {features.items.map((feature, index) => (
             <div
               key={feature.title}
-              className={`group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 hover:border-blue-100 ${
+              className={`group relative bg-white rounded-2xl p-8 shadow-xs hover:shadow-xl transition-all duration-500 border border-slate-100 hover:border-blue-100 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -72,7 +72,7 @@ export function Features() {
               }}
             >
               {/* Icon Container */}
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br from-blue-500 to-blue-600 text-white mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 <Icon name={feature.iconName} className="w-7 h-7" aria-hidden="true" />
               </div>
 
@@ -85,7 +85,7 @@ export function Features() {
               </p>
 
               {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-50 to-transparent rounded-tr-2xl rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-blue-50 to-transparent rounded-tr-2xl rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>

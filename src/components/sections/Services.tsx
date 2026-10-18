@@ -39,7 +39,7 @@ export function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="py-20 md:py-28 bg-gradient-to-b from-slate-900 to-slate-800"
+      className="py-20 md:py-28 bg-linear-to-b from-slate-900 to-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -62,7 +62,7 @@ export function Services() {
           {services.items.map((service, index) => (
             <div
               key={service.title}
-              className={`group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-500 ${
+              className={`group relative bg-white/5 backdrop-blur-xs rounded-2xl p-8 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-500 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -94,14 +94,14 @@ export function Services() {
                   <span className="sr-only"> על {service.title}</span>
                   <Icon
                     name="ArrowRight"
-                    className="w-4 h-4 transition-transform group-hover:-translate-x-1 rtl:rotate-180 rtl:group-hover:translate-x-1"
+                    className="w-4 h-4 transition-transform group-hover:-translate-x-1 rtl:rotate-180 group-hover:rtl:translate-x-1"
                     aria-hidden="true"
                   />
                 </a>
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600/0 via-blue-600/5 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-blue-600/0 via-blue-600/5 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           ))}
         </div>

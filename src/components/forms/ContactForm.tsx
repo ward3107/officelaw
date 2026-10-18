@@ -148,9 +148,9 @@ export function ContactForm() {
               {/* Phone */}
               <a
                 href={`tel:${contact.phone.replace(/-/g, "")}`}
-                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group"
+                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-xs hover:shadow-md transition-shadow group"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Icon name="Phone" className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
@@ -164,9 +164,9 @@ export function ContactForm() {
               {/* Email */}
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group"
+                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-xs hover:shadow-md transition-shadow group"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Icon name="Mail" className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
@@ -178,8 +178,8 @@ export function ContactForm() {
               </a>
 
               {/* Address */}
-              <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+              <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-xs">
+                <div className="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
                   <Icon name="MapPin" className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
@@ -249,7 +249,7 @@ export function ContactForm() {
                       className="flex items-center gap-3 p-4 bg-red-50 border-2 border-red-400 rounded-xl text-red-700"
                       aria-live="polite"
                     >
-                      <Icon name="AlertCircle" className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
+                      <Icon name="AlertCircle" className="w-5 h-5 shrink-0" aria-hidden="true" />
                       <span className="font-medium">
                         <span className="sr-only">שגיאה: </span>
                         {errorMessage}
@@ -274,7 +274,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       required
                       aria-required="true"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
                       placeholder="הזינו את שמכם"
                     />
                   </div>
@@ -296,7 +296,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       required
                       aria-required="true"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
                       placeholder="050-1234567"
                       dir="ltr"
                     />
@@ -319,7 +319,7 @@ export function ContactForm() {
                       onChange={handleChange}
                       required
                       aria-required="true"
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-slate-900"
                       placeholder="your@email.com"
                       dir="ltr"
                     />
@@ -339,7 +339,7 @@ export function ContactForm() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none text-slate-900"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none text-slate-900"
                       placeholder="ספרו לנו כיצד נוכל לעזור..."
                     />
                   </div>
@@ -354,7 +354,7 @@ export function ContactForm() {
                         checked={formData.termsAccepted}
                         onChange={handleChange}
                         required
-                        className="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                        className="mt-1 w-5 h-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
                       />
                       <span className="text-sm text-slate-600 leading-relaxed">
                         קראתי ואני מסכים/ה ל
@@ -376,7 +376,7 @@ export function ContactForm() {
                         name="marketingConsent"
                         checked={formData.marketingConsent}
                         onChange={handleChange}
-                        className="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                        className="mt-1 w-5 h-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
                       />
                       <span className="text-sm text-slate-600 leading-relaxed">
                         אני מאשר/ת לקבל עדכונים ומידע שיווקי באמצעות דוא״ל, SMS ו/או וואטסאפ.

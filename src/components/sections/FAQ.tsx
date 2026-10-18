@@ -95,7 +95,7 @@ export function FAQ() {
                     {item.question}
                   </h3>
                   <span
-                    className={`flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center transition-transform duration-300 ${
+                    className={`shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                     aria-hidden="true"

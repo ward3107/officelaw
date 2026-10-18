@@ -27,7 +27,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900" />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-blue-900" />
 
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -99,7 +99,7 @@ export function Hero() {
               <span>{hero.ctaText}</span>
               <Icon
                 name="ArrowRight"
-                className="w-5 h-5 transition-transform group-hover:-translate-x-1 rtl:rotate-180 rtl:group-hover:translate-x-1"
+                className="w-5 h-5 transition-transform group-hover:-translate-x-1 rtl:rotate-180 group-hover:rtl:translate-x-1"
                 aria-hidden="true"
               />
             </a>
@@ -107,7 +107,7 @@ export function Hero() {
             {/* Secondary CTA */}
             <a
               href={`tel:${contact.phone.replace(/-/g, "")}`}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-lg font-semibold rounded-full backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-lg font-semibold rounded-full backdrop-blur-xs border border-white/20 transition-all duration-200 hover:scale-105"
             >
               <Icon name="Phone" className="w-5 h-5" aria-hidden="true" />
               <span>{contact.phone}</span>
