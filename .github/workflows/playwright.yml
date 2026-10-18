@@ -60,9 +60,5 @@ jobs:
           path: test-results/
           retention-days: 7
 
-      - name: Annotate test results
-        if: always()
-        uses: opencovid19-fr/annotate-tests-action@v0.2.0
-        with:
-          json-file-path: playwright-report/results.json
-          title: Playwright Security Tests
+      # The HTML report and traces above are the test evidence.
+      # The retired annotation action no longer exists and prevented all tests from starting.
