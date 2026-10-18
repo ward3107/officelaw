@@ -32,7 +32,7 @@ export default function AccessibilityPage() {
 
       {/* Content */}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-8 md:p-12">
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xs p-8 md:p-12">
           <div className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600">
 
             {/* Disclaimer */}

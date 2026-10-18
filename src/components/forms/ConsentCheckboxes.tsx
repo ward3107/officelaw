@@ -54,7 +54,7 @@ export function ConsentCheckboxes({
             checked={consent.termsAccepted}
             onChange={() => handleChange("termsAccepted")}
             required={termsRequired}
-            className="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
+            className="mt-1 w-5 h-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
           />
           <span className="text-sm text-slate-600 leading-relaxed">
             קראתי ואני מסכים/ה ל
@@ -86,7 +86,7 @@ export function ConsentCheckboxes({
             type="checkbox"
             checked={consent.marketingConsent}
             onChange={() => handleChange("marketingConsent")}
-            className="mt-1 w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
+            className="mt-1 w-5 h-5 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
           />
           <span className="text-sm text-slate-600 leading-relaxed">
             אני מאשר/ת ל{companyName} לשלוח לי דברי פרסומת, עדכונים ומידע שיווקי

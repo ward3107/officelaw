@@ -317,7 +317,7 @@ export function CookieConsent() {
   return (
     <div
       dir={isRTL ? "rtl" : "ltr"}
-      className="fixed bottom-0 left-0 right-0 z-[9999] animate-slide-up"
+      className="fixed bottom-0 left-0 right-0 z-9999 animate-slide-up"
       role="dialog"
       aria-label="Cookie consent"
       aria-live="polite"
@@ -338,7 +338,7 @@ export function CookieConsent() {
                 {t.description}{" "}
                 <Link
                   href={COOKIE_CONFIG.privacyPolicyUrl}
-                  className="underline hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                  className="underline hover:opacity-80 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-sm"
                   style={{ color: COOKIE_CONFIG.primaryColor }}
                 >
                   {t.privacyLink}
@@ -352,7 +352,7 @@ export function CookieConsent() {
                 <button
                   key={lang}
                   onClick={() => handleLanguageChange(lang as LanguageCode)}
-                  className={`px-2 py-1 text-xs font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  className={`px-2 py-1 text-xs font-medium rounded transition-colors focus:outline-hidden focus:ring-2 focus:ring-blue-500 ${
                     language === lang
                       ? "bg-slate-800 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -370,20 +370,20 @@ export function CookieConsent() {
           <div className="flex flex-wrap gap-2 mb-3">
             <button
               onClick={handleAcceptAll}
-              className="px-5 py-2.5 text-sm font-medium text-white rounded-lg transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+              className="px-5 py-2.5 text-sm font-medium text-white rounded-lg transition-all hover:opacity-90 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
               style={{ backgroundColor: COOKIE_CONFIG.primaryColor }}
             >
               {t.acceptAll}
             </button>
             <button
               onClick={handleRejectAll}
-              className="px-5 py-2.5 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg transition-all hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+              className="px-5 py-2.5 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg transition-all hover:bg-slate-200 focus:outline-hidden focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
             >
               {t.rejectAll}
             </button>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="px-5 py-2.5 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg transition-all hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+              className="px-5 py-2.5 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg transition-all hover:bg-slate-50 focus:outline-hidden focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
               aria-expanded={isExpanded}
             >
               {t.customize}
@@ -409,7 +409,7 @@ export function CookieConsent() {
                     className="w-11 h-6 bg-green-500 rounded-full flex items-center justify-center cursor-not-allowed opacity-80"
                     aria-disabled="true"
                   >
-                    <div className={`w-5 h-5 bg-white rounded-full shadow ${isRTL ? "mr-0.5" : "ml-0.5"}`} />
+                    <div className={`w-5 h-5 bg-white rounded-full shadow-sm ${isRTL ? "mr-0.5" : "ml-0.5"}`} />
                   </div>
                 </div>
               </div>
@@ -423,7 +423,7 @@ export function CookieConsent() {
                 <div className="shrink-0">
                   <button
                     onClick={() => setAnalytics(!analytics)}
-                    className={`relative w-11 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    className={`relative w-11 h-6 rounded-full transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                       analytics ? "bg-blue-600" : "bg-slate-300"
                     }`}
                     role="switch"
@@ -454,7 +454,7 @@ export function CookieConsent() {
                 <div className="shrink-0">
                   <button
                     onClick={() => setMarketing(!marketing)}
-                    className={`relative w-11 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    className={`relative w-11 h-6 rounded-full transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                       marketing ? "bg-blue-600" : "bg-slate-300"
                     }`}
                     role="switch"
@@ -480,7 +480,7 @@ export function CookieConsent() {
               <div className="mt-4 pt-3 border-t border-slate-200">
                 <button
                   onClick={handleSavePreferences}
-                  className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-white rounded-lg transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+                  className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-white rounded-lg transition-all hover:opacity-90 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
                   style={{ backgroundColor: COOKIE_CONFIG.primaryColor }}
                 >
                   {t.savePreferences}

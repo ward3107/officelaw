@@ -93,7 +93,7 @@ export function About() {
               {about.stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className={`relative bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 text-center group hover:shadow-lg transition-all duration-300 ${
+                  className={`relative bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl p-8 text-center group hover:shadow-lg transition-all duration-300 ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
@@ -117,9 +117,9 @@ export function About() {
             </div>
 
             {/* Address Card */}
-            <div className="mt-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+            <div className="mt-6 bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center" aria-hidden="true">
+                <div className="shrink-0 w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center" aria-hidden="true">
                   <Icon name="MapPin" className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>

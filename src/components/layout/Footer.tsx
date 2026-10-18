@@ -135,7 +135,7 @@ export function Footer() {
               <li className="flex items-start gap-3 text-slate-400">
                 <Icon
                   name="MapPin"
-                  className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1"
+                  className="w-5 h-5 text-blue-400 shrink-0 mt-1"
                   aria-hidden="true"
                 />
                 <span>{contact.address}</span>
