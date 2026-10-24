@@ -15,3 +15,5 @@ The automation never checks out or runs pull-request code with write permissions
 A failed or missing required check blocks merging. Resolve the failure and rerun the affected check; do not remove the requirement to make an update pass. Build/test results do not certify external integrations or production user journeys.
 
 This configuration is installed independently of the pending Tailwind major upgrade. Existing failed audits and browser tests still block dependency merges; enabling auto-merge is not evidence that a failing update was merged. The advisory Snyk integration still requires its repository token.
+
+Native branch protection requires one approval, dismisses stale approvals after new commits, and requires approval after the latest push. The Actions bot supplies that approval only for the current verified Dependabot patch/minor commit. Major and unclassified updates receive no automatic approval.
