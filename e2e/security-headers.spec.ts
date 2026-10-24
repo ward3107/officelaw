@@ -5,19 +5,24 @@ import { test, expect } from '@playwright/test';
  * Verifies that critical security headers are present
  */
 test.describe('Security Headers', () => {
-  test('should have CSP Report-Only header', async ({ page }) => {
+  test('should enforce CSP on the production server', async ({ page }) => {
     const response = await page.goto('/');
     const headers = response!.headers();
 
-    // Check for CSP Report-Only header (Phase 1)
-    const cspReportOnly = headers['content-security-policy-report-only'];
-    expect(cspReportOnly).toBeDefined();
+    // CI starts `next start`: production uses an enforcing policy, while
+    // the optional local development server uses report-only for HMR.
+    const isProduction = !!process.env.CI || process.env.NODE_ENV === 'production';
+    const csp = headers[isProduction ? 'content-security-policy' : 'content-security-policy-report-only'];
+    expect(csp).toBeDefined();
 
     // Verify key CSP directives are present
-    expect(cspReportOnly).toContain("default-src 'self'");
-    expect(cspReportOnly).toContain("frame-ancestors 'none'");
-    expect(cspReportOnly).toContain("object-src 'none'");
-    expect(cspReportOnly).toContain("upgrade-insecure-requests");
+    expect(csp).toContain("default-src 'self'");
+    expect(csp).toContain("frame-ancestors 'none'");
+    expect(csp).toContain("object-src 'none'");
+    if (isProduction) {
+      expect(csp).toContain("upgrade-insecure-requests");
+      expect(csp).not.toContain("'unsafe-eval'");
+    }
   });
 
   test('should have X-Content-Type-Options nosniff', async ({ page }) => {
@@ -59,7 +64,7 @@ test.describe('Security Headers', () => {
 
     // HSTS should only be present in production (requires HTTPS)
     // Skip this test in development
-    test.skip(process.env.NODE_ENV !== 'production', 'HSTS only applies in production');
+    test.skip(!process.env.CI && process.env.NODE_ENV !== 'production', 'HSTS only applies in production');
 
     expect(headers['strict-transport-security']).toBeDefined();
     expect(headers['strict-transport-security']).toContain('max-age=');
