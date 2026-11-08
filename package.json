@@ -57,8 +57,9 @@
     "minimatch": "^9.0.7",
     "@grpc/grpc-js": "^1.13.6",
     "postcss": "^8.5.32",
-    "firebase": {
-      "undici": "^6.29.1"
+    "undici": "^6.29.1",
+    "jsdom": {
+      "undici": "^7.30.2"
     }
   }
 }
