@@ -106,7 +106,7 @@ describe('CSP Module', () => {
       global.window = originalWindow
     })
 
-    it('should not throw in happy-dom environment', () => {
+    it('should not throw in the test DOM environment', () => {
       expect(() => initializeCSP()).not.toThrow()
     })
   })
