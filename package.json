@@ -55,8 +55,10 @@
   },
   "overrides": {
     "minimatch": "^9.0.7",
-    "undici": "^6.23.0",
     "@grpc/grpc-js": "^1.13.6",
-    "postcss": "^8.5.32"
+    "postcss": "^8.5.32",
+    "firebase": {
+      "undici": "^6.29.1"
+    }
   }
 }
